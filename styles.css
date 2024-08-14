@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Helvetica;
+}
+
+#output-container {
+  overflow: hidden;
+}
+
+.graphical_rep,
+.table_rep {
+  margin: 10px;
+}
+
+.graphical_rep {
+  margin-top: 50px;
+}
+
+#output {
+  overflow-x: scroll;
+}
+
+.seo_matrix_heading {
+  text-decoration: underline;
+  font-size: 30px;
+  text-align: center;
+}
+
+canvas {
+  height: auto !important;
+}
+
+.graphical_rep h3,
+.table_rep h3 {
+  margin-top: 50px;
+  text-decoration: underline;
+  letter-spacing: 0.08rem;
+}
+
+.desc {
+  letter-spacing: 0.05rem;
+  line-height: 1.5rem;
+  margin: 10px 0;
+}
+
+.sect_title {
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 0.08rem;
+}
+
+section {
+  margin: 50px 0 30px;
+}
+
+.sect_span {
+  text-transform: lowercase;
+}
+
+@media screen and (min-width: 550px) {
+  .graphical_rep,
+  .table_rep {
+    margin: 20px;
+  }
+}

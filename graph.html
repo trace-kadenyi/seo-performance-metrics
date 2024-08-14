@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SEO Analytics Performance Matrix</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Add Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <h1 class="seo_matrix_heading">
+      ENDEVIO - SEO ANALYTICS PERFORMANCE MATRIX
+    </h1>
+    <!-- table representation -->
+    <div class="table_rep">
+      <h3>Table representation of the SEO metric performance</h3>
+      <pre id="output"></pre>
+    </div>
+    <!-- graphical representation -->
+    <div class="graphical_rep">
+      <!-- <h3>
+        Select Metrics Below to View Individual Performance (click the
+        checkboxes to isolate data where feasible)
+      </h3> -->
+      <!-- Add canvases for each graph -->
+      <!-- Sessions, Users, Organic Traffic Graph -->
+      <section>
+        <h4 class="sect_title">
+          Sessions, Users, Organic Traffic
+          <span class="sect_span"
+            >(click the checkboxes to isolate data if needed)</span
+          >
+        </h4>
+        <p class="desc">
+          <b>Sessions (Microsoft Clarity): </b>A session is a group of user
+          interactions with your website that take place within a given time
+          frame. A session ends after 30 minutes of inactivity.
+        </p>
+        <p class="desc">
+          <b>Users (Google Analytics): </b>A user is an individual who has
+          visited your website at least once. Google Analytics tracks unique
+          users across sessions.
+        </p>
+        <p class="desc">
+          <b>Organic Traffic (Ahrefs): </b>Organic traffic refers to visitors
+          who arrive at your website through unpaid search engine results.
+        </p>
+      </section>
+      <canvas id="combinedChart"></canvas>
+      <!-- Backlinks Graph -->
+      <section>
+        <h4 class="sect_title">Backlinks</h4>
+        <p class="desc">
+          <b>Backlinks (Ahrefs): </b>Backlinks are incoming links from other
+          websites to your site. They are a key factor in search engine ranking.
+        </p>
+      </section>
+      <canvas id="backlinksChart"></canvas>
+      <!-- Domain Rating Graph -->
+      <section>
+        <h4 class="sect_title">Domain Rating (DR)</h4>
+        <p class="desc">
+          <b>Domain Rating (DR) - Ahrefs: </b>Domain Rating is a metric that
+          measures the strength of a website's backlink profile on a scale from
+          0 to 100.
+        </p>
+      </section>
+      <canvas id="domainRatingChart"></canvas>
+      <!-- Bounce Rate Graph -->
+      <section>
+        <h4 class="sect_title">Bounce Rate</h4>
+        <p class="desc">
+          <b>Bounce Rate (Google Analytics): </b>Bounce rate is the percentage
+          of visitors who navigate away from your site after viewing only one
+          page.
+        </p>
+      </section>
+      <canvas id="bounceRateChart"></canvas>
+      <!-- click through rate graph -->
+      <section>
+        <h4 class="sect_title">Click-Through Rate</h4>
+        <p class="desc">
+          <b>Click-Through Rate (Google Search Console): </b>The click-through
+          rate (CTR) is the percentage of users who clicked on your website's
+          link after seeing it in search engine results.
+        </p>
+      </section>
+      <canvas id="clickThroughRateChart"></canvas>
+      <!-- average position graph -->
+      <section>
+        <h4 class="sect_title">Average Position</h4>
+        <p class="desc">
+          <b>Average Position (Google Search Console): </b>Average position is
+          the average ranking of your website's pages in search engine results
+          for a specific query
+        </p>
+      </section>
+      <canvas id="averagePositionChart"></canvas>
+      <!-- time on page graph -->
+      <section>
+        <h4 class="sect_title">Time On Page</h4>
+        <p class="desc">
+          <b>Time on Page (Microsoft Clarity): </b>Time on page refers to the
+          average duration a visitor spends on a specific page on your website.
+        </p>
+      </section>
+      <canvas id="timeOnPageChart"></canvas>
+      <!-- average engagement time -->
+      <section>
+        <h4 class="sect_title">Average Engagement Time</h4>
+        <p class="desc">
+          <b>Average Engagement Time: </b>The average amount of time users spend
+          actively interacting with your website or app. It shows how long, on
+          average, people are engaged with your content, excluding times when
+          they are inactive.
+        </p>
+      </section>
+      <canvas id="averageEngagementTimeChart"></canvas>
+    </div>
+
+    <!-- Link to the JavaScript file -->
+    <script src="graph.js"></script>
+  </body>
+</html>
