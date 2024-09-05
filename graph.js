@@ -7,23 +7,23 @@ let seoMetricsTable = [
     may2024: "16,414",
     june2024: "14,482",
     july2024: "19,192",
-    august2024: "pending",
+    august2024: "20,972",
   },
   {
     metric: "Users",
     source: "Google Analytics",
-    may2024: "17K",
-    june2024: "15K",
-    july2024: "19K",
-    august2024: "pending",
+    may2024: "15,377",
+    june2024: "13,547",
+    july2024: "17,278",
+    august2024: "22,190",
   },
   {
     metric: "Organic Traffic",
     source: "Ahrefs",
     may2024: "8,356",
-    june2024: "9,158",
-    july2024: "8,988",
-    august2024: "pending",
+    june2024: "9,021",
+    july2024: "8,824",
+    august2024: "10,876",
   },
   {
     metric: "Average Position",
@@ -31,7 +31,7 @@ let seoMetricsTable = [
     may2024: 19.6,
     june2024: 19.5,
     july2024: 18.2,
-    august2024: "pending",
+    august2024: 18.9,
   },
   {
     metric: "Click-Through Rate",
@@ -39,15 +39,15 @@ let seoMetricsTable = [
     may2024: "3%",
     june2024: "2.6%",
     july2024: "3%",
-    august2024: "pending",
+    august2024: "3.2%",
   },
   {
-    metric: "Backlinks",
+    metric: "Referring Domains",
     source: "Ahrefs",
-    may2024: 102,
-    june2024: 125,
-    july2024: 135,
-    august2024: "pending",
+    may2024: 99,
+    june2024: 122,
+    july2024: 132,
+    august2024: 137,
   },
   {
     metric: "Domain Rating (DR)",
@@ -55,7 +55,7 @@ let seoMetricsTable = [
     may2024: 24,
     june2024: 24,
     july2024: 24,
-    august2024: "pending",
+    august2024: 25,
   },
   {
     metric: "Bounce Rate",
@@ -63,7 +63,7 @@ let seoMetricsTable = [
     may2024: "37.6%",
     june2024: "39.8%",
     july2024: "39.8%",
-    august2024: "pending",
+    august2024: "38.4%",
   },
   {
     metric: "Time on Page",
@@ -71,7 +71,7 @@ let seoMetricsTable = [
     may2024: "1.7 min",
     june2024: "1.7 min",
     july2024: "1.8 min",
-    august2024: "pending",
+    august2024: "1.7min",
   },
   {
     metric: "Average Engagement Time",
@@ -79,7 +79,7 @@ let seoMetricsTable = [
     may2024: "1.23 min",
     june2024: "1.33 min",
     july2024: "1.35 min",
-    august2024: "pending",
+    august2024: "1.32 min",
   },
 ];
 
@@ -143,29 +143,29 @@ function displayMatrixData(data) {
 // Display the matrix data when the page loads
 displayMatrixData(seoMetricsTable);
 
-  // GRAPH VERSION
+// GRAPH VERSION
 
 // Sessions, users, organic traffic metrics
 const seoMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024"],
+  labels: ["May 2024", "June 2024", "July 2024", "August 2024"],
   datasets: [
     {
       label: "Sessions",
-      data: [16414, 14482, 19192],
+      data: [16414, 14482, 19192, 20972],
       borderColor: "rgba(75, 192, 192, 1)",
       backgroundColor: "rgba(75, 192, 192, 0.2)",
       fill: true,
     },
     {
       label: "Users",
-      data: [17000, 15000, 19000],
+      data: [15377, 13547, 17278, 22190],
       borderColor: "rgba(153, 102, 255, 1)",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       fill: true,
     },
     {
       label: "Organic Traffic",
-      data: [8356, 9158, 8988],
+      data: [8356, 9021, 8824, 10876],
       borderColor: "rgba(255, 159, 64, 1)",
       backgroundColor: "rgba(255, 159, 64, 0.2)",
       fill: true,
@@ -174,13 +174,13 @@ const seoMetrics = {
 };
 
 // Separate datasets for individual graphs
-// Backlinks metrics
+// Referring Domains metrics
 const backlinksMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024"],
+  labels: ["May 2024", "June 2024", "July 2024", "August 2024"],
   datasets: [
     {
-      label: "Backlinks",
-      data: [102, 125, 135],
+      label: "Referring Domains",
+      data: [99, 122, 132, 137],
       borderColor: "rgba(255, 99, 132, 1)",
       backgroundColor: "rgba(255, 99, 132, 0.2)",
       fill: true,
@@ -190,11 +190,11 @@ const backlinksMetrics = {
 
 // Domain rating metrics
 const domainRatingMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024"],
+  labels: ["May 2024", "June 2024", "July 2024", "August 2024"],
   datasets: [
     {
       label: "Domain Rating (DR)",
-      data: [24, 24, 24],
+      data: [24, 24, 24, 25],
       borderColor: "rgba(54, 162, 235, 1)",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       fill: true,
@@ -204,11 +204,11 @@ const domainRatingMetrics = {
 
 // Bounce rate metrics
 const bounceRateMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024"],
+  labels: ["May 2024", "June 2024", "July 2024", "August 2024"],
   datasets: [
     {
       label: "Bounce Rate",
-      data: [37.6, 39.8, 39.8],
+      data: [37.6, 39.8, 39.8, 38.4],
       borderColor: "rgba(255, 206, 86, 1)",
       backgroundColor: "rgba(255, 206, 86, 0.2)",
       fill: true,
@@ -218,11 +218,11 @@ const bounceRateMetrics = {
 
 // Click-through rate metrics
 const clickThroughRateMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024"],
+  labels: ["May 2024", "June 2024", "July 2024", "August 2024"],
   datasets: [
     {
       label: "Click-Through Rate",
-      data: [3, 2.6, 3],
+      data: [3, 2.6, 3, 3.2],
       borderColor: "rgba(75, 192, 192, 1)",
       backgroundColor: "rgba(75, 192, 192, 0.2)",
       fill: true,
@@ -232,11 +232,11 @@ const clickThroughRateMetrics = {
 
 // Average position metricd
 const averagePositionMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024"],
+  labels: ["May 2024", "June 2024", "July 2024", "August 2024"],
   datasets: [
     {
       label: "Average Position",
-      data: [19.6, 19.5, 18.2],
+      data: [19.6, 19.5, 18.2, 18.9],
       borderColor: "rgba(153, 102, 255, 1)",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       fill: true,
@@ -246,11 +246,11 @@ const averagePositionMetrics = {
 
 // Time on page metrics
 const timeOnPageMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024"],
+  labels: ["May 2024", "June 2024", "July 2024", "August 2024"],
   datasets: [
     {
       label: "Time on Page",
-      data: [1.7, 1.7, 1.8],
+      data: [1.7, 1.7, 1.8, 1.7],
       borderColor: "rgba(255, 159, 64, 1)",
       backgroundColor: "rgba(255, 159, 64, 0.2)",
       fill: true,
@@ -259,11 +259,11 @@ const timeOnPageMetrics = {
 };
 // Average time metrics
 const averageEngagementTimeMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024"],
+  labels: ["May 2024", "June 2024", "July 2024", "August 2024"],
   datasets: [
     {
       label: "Average Engagement Time",
-      data: [1.23, 1.33, 1.35], // Decimal minutes data
+      data: [1.23, 1.33, 1.35, 1.32], // Decimal minutes data
       borderColor: "rgba(54, 162, 235, 1)",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       fill: true,
