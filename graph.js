@@ -9,6 +9,7 @@ let seoMetricsTable = [
     july2024: "19,192",
     august2024: "20,972",
     september2024: "16,918",
+    october2024: "13,741",
   },
   {
     metric: "Users",
@@ -18,6 +19,7 @@ let seoMetricsTable = [
     july2024: "17,278",
     august2024: "22,190",
     september2024: "16,837",
+    october2024: "15,654",
   },
   {
     metric: "Organic Traffic",
@@ -27,6 +29,7 @@ let seoMetricsTable = [
     july2024: "8,824",
     august2024: "10,876",
     september2024: "8,600",
+    october2024: "3,888",
   },
   {
     metric: "Average Position",
@@ -36,6 +39,7 @@ let seoMetricsTable = [
     july2024: 18.2,
     august2024: 18.9,
     september2024: 22.1,
+    october2024: 27.2,
   },
   {
     metric: "Click-Through Rate",
@@ -44,7 +48,8 @@ let seoMetricsTable = [
     june2024: "2.6%",
     july2024: "3%",
     august2024: "3.2%",
-    september2024: "2.60",
+    september2024: "2.60%",
+    october2024: "2.3%",
   },
   {
     metric: "Referring Domains",
@@ -54,6 +59,7 @@ let seoMetricsTable = [
     july2024: 132,
     august2024: 137,
     september2024: 135,
+    october2024: 208,
   },
   {
     metric: "Domain Rating (DR)",
@@ -63,6 +69,7 @@ let seoMetricsTable = [
     july2024: 24,
     august2024: 25,
     september2024: 24,
+    october2024: 27,
   },
   {
     metric: "Bounce Rate",
@@ -72,6 +79,7 @@ let seoMetricsTable = [
     july2024: "39.8%",
     august2024: "38.4%",
     september2024: "41.5",
+    october2024: "48.3%",
   },
   {
     metric: "Time on Page",
@@ -81,6 +89,7 @@ let seoMetricsTable = [
     july2024: "1.8 min",
     august2024: "1.7min",
     september2024: "1.8min",
+    october2024: "1.7min",
   },
   {
     metric: "Average Engagement Time",
@@ -90,6 +99,17 @@ let seoMetricsTable = [
     july2024: "1.35 min",
     august2024: "1.32 min",
     september2024: "1.25 min",
+    october2024: "1.05 min",
+  },
+  {
+    metric: "Backlinks",
+    source: "Ahrefs",
+    may2024: "-",
+    june2024: "-",
+    july2024: "-",
+    august2024: "418",
+    september2024: "431",
+    october2024: "834",
   },
 ];
 
@@ -107,6 +127,7 @@ function displayMatrixData(data) {
     july2024: 25,
     august2024: 25,
     september2024: 25,
+    october2024: 25,
   };
 
   // Create header row
@@ -116,7 +137,9 @@ function displayMatrixData(data) {
     columnWidths.june2024
   )} | ${"July 2024".padEnd(columnWidths.july2024)} | ${"August 2024".padEnd(
     columnWidths.august2024
-  )} | ${"September 2024".padEnd(columnWidths.september2024)} |\n`;
+  )} | ${"September 2024".padEnd(
+    columnWidths.september2024
+  )} | ${"October 2024".padEnd(columnWidths.october2024)} |\n`;
 
   outputText += `|${"-".repeat(columnWidths.metric + 2)}|${"-".repeat(
     columnWidths.source + 2
@@ -124,7 +147,9 @@ function displayMatrixData(data) {
     columnWidths.june2024 + 2
   )}|${"-".repeat(columnWidths.july2024 + 2)}|${"-".repeat(
     columnWidths.august2024 + 2
-  )}|${"-".repeat(columnWidths.september2024 + 2)}|\n`;
+  )}|${"-".repeat(columnWidths.october2024 + 2)}|${"-".repeat(
+    columnWidths.october2024 + 2
+  )}|\n`;
 
   // Create data rows
   data.forEach((item) => {
@@ -140,14 +165,18 @@ function displayMatrixData(data) {
       .toString()
       .padEnd(columnWidths.august2024)} | ${item.september2024
       .toString()
-      .padEnd(columnWidths.september2024)} |\n`;
+      .padEnd(columnWidths.september2024)} | ${item.october2024
+      .toString()
+      .padEnd(columnWidths.october2024)} |\n`;
     outputText += `|${"-".repeat(columnWidths.metric + 2)}|${"-".repeat(
       columnWidths.source + 2
     )}|${"-".repeat(columnWidths.may2024 + 2)}|${"-".repeat(
       columnWidths.june2024 + 2
     )}|${"-".repeat(columnWidths.july2024 + 2)}|${"-".repeat(
       columnWidths.august2024 + 2
-    )}|${"-".repeat(columnWidths.september2024 + 2)}|\n`;
+    )}|${"-".repeat(columnWidths.september2024 + 2)}|${"-".repeat(
+      columnWidths.october2024 + 2
+    )}|\n`;
   });
 
   outputElement.innerHTML = outputText;
@@ -160,25 +189,32 @@ displayMatrixData(seoMetricsTable);
 
 // Sessions, users, organic traffic metrics
 const seoMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024", "August 2024", "September 2024"],
+  labels: [
+    "May 2024",
+    "June 2024",
+    "July 2024",
+    "August 2024",
+    "September 2024",
+    "October 2024",
+  ],
   datasets: [
     {
       label: "Sessions",
-      data: [16414, 14482, 19192, 20972, 16918],
+      data: [16414, 14482, 19192, 20972, 16918, 13741],
       borderColor: "rgba(75, 192, 192, 1)",
       backgroundColor: "rgba(75, 192, 192, 0.2)",
       fill: true,
     },
     {
       label: "Users",
-      data: [15377, 13547, 17278, 22190, 16837],
+      data: [15377, 13547, 17278, 22190, 16837, 15654],
       borderColor: "rgba(153, 102, 255, 1)",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       fill: true,
     },
     {
       label: "Organic Traffic",
-      data: [8356, 9021, 8824, 10876, 8600],
+      data: [8356, 9021, 8824, 10876, 8600, 3888],
       borderColor: "rgba(255, 159, 64, 1)",
       backgroundColor: "rgba(255, 159, 64, 0.2)",
       fill: true,
@@ -188,12 +224,19 @@ const seoMetrics = {
 
 // Separate datasets for individual graphs
 // Referring Domains metrics
-const backlinksMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024", "August 2024", "September 2024"],
+const refDomsMetrics = {
+  labels: [
+    "May 2024",
+    "June 2024",
+    "July 2024",
+    "August 2024",
+    "September 2024",
+    "October 2024",
+  ],
   datasets: [
     {
       label: "Referring Domains",
-      data: [99, 122, 132, 137, 135],
+      data: [99, 122, 132, 137, 135, 208],
       borderColor: "rgba(255, 99, 132, 1)",
       backgroundColor: "rgba(255, 99, 132, 0.2)",
       fill: true,
@@ -203,11 +246,18 @@ const backlinksMetrics = {
 
 // Domain rating metrics
 const domainRatingMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024", "August 2024", "September 2024"],
+  labels: [
+    "May 2024",
+    "June 2024",
+    "July 2024",
+    "August 2024",
+    "September 2024",
+    "October 2024",
+  ],
   datasets: [
     {
       label: "Domain Rating (DR)",
-      data: [24, 24, 24, 25, 24],
+      data: [24, 24, 24, 25, 24, 27],
       borderColor: "rgba(54, 162, 235, 1)",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       fill: true,
@@ -217,11 +267,18 @@ const domainRatingMetrics = {
 
 // Bounce rate metrics
 const bounceRateMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024", "August 2024", "September 2024"],
+  labels: [
+    "May 2024",
+    "June 2024",
+    "July 2024",
+    "August 2024",
+    "September 2024",
+    "October 2024",
+  ],
   datasets: [
     {
       label: "Bounce Rate",
-      data: [37.6, 39.8, 39.8, 38.4, 41.5],
+      data: [37.6, 39.8, 39.8, 38.4, 41.5, 48.3],
       borderColor: "rgba(255, 206, 86, 1)",
       backgroundColor: "rgba(255, 206, 86, 0.2)",
       fill: true,
@@ -231,11 +288,18 @@ const bounceRateMetrics = {
 
 // Click-through rate metrics
 const clickThroughRateMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024", "August 2024", "September 2024"],
+  labels: [
+    "May 2024",
+    "June 2024",
+    "July 2024",
+    "August 2024",
+    "September 2024",
+    "October 2024",
+  ],
   datasets: [
     {
       label: "Click-Through Rate",
-      data: [3, 2.6, 3, 3.2, 2.6],
+      data: [3, 2.6, 3, 3.2, 2.6, 2.3],
       borderColor: "rgba(75, 192, 192, 1)",
       backgroundColor: "rgba(75, 192, 192, 0.2)",
       fill: true,
@@ -245,11 +309,18 @@ const clickThroughRateMetrics = {
 
 // Average position metricd
 const averagePositionMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024", "August 2024", "September 2024"],
+  labels: [
+    "May 2024",
+    "June 2024",
+    "July 2024",
+    "August 2024",
+    "September 2024",
+    "October 2024",
+  ],
   datasets: [
     {
       label: "Average Position",
-      data: [19.6, 19.5, 18.2, 18.9, 22.1],
+      data: [19.6, 19.5, 18.2, 18.9, 22.1, 27.2],
       borderColor: "rgba(153, 102, 255, 1)",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       fill: true,
@@ -259,11 +330,18 @@ const averagePositionMetrics = {
 
 // Time on page metrics
 const timeOnPageMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024", "August 2024", "September 2024"],
+  labels: [
+    "May 2024",
+    "June 2024",
+    "July 2024",
+    "August 2024",
+    "September 2024",
+    "October 2024",
+  ],
   datasets: [
     {
       label: "Time on Page",
-      data: [1.7, 1.7, 1.8, 1.7, 1.8],
+      data: [1.7, 1.7, 1.8, 1.7, 1.8, 1.7],
       borderColor: "rgba(255, 159, 64, 1)",
       backgroundColor: "rgba(255, 159, 64, 0.2)",
       fill: true,
@@ -272,11 +350,31 @@ const timeOnPageMetrics = {
 };
 // Average time metrics
 const averageEngagementTimeMetrics = {
-  labels: ["May 2024", "June 2024", "July 2024", "August 2024", "September 2024"],
+  labels: [
+    "May 2024",
+    "June 2024",
+    "July 2024",
+    "August 2024",
+    "September 2024",
+    "October 2024",
+  ],
   datasets: [
     {
       label: "Average Engagement Time",
-      data: [1.23, 1.33, 1.35, 1.32, 1.25], // Decimal minutes data
+      data: [1.23, 1.33, 1.35, 1.32, 1.25, 1.05], // Decimal minutes data
+      borderColor: "rgba(54, 162, 235, 1)",
+      backgroundColor: "rgba(54, 162, 235, 0.2)",
+      fill: true,
+    },
+  ],
+};
+// Average time metrics
+const backlinksMetrics = {
+  labels: ["August 2024", "September 2024", "October 2024"],
+  datasets: [
+    {
+      label: "Backlinks",
+      data: [418, 431, 834],
       borderColor: "rgba(54, 162, 235, 1)",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       fill: true,
@@ -328,13 +426,11 @@ function initializeCharts() {
     },
   });
 
-  // backlinks chart
-  const ctxBacklinks = document
-    .getElementById("backlinksChart")
-    .getContext("2d");
-  new Chart(ctxBacklinks, {
+  // Referring Domains chart
+  const ctxRefDoms = document.getElementById("refDomsChart").getContext("2d");
+  new Chart(ctxRefDoms, {
     type: "line",
-    data: backlinksMetrics,
+    data: refDomsMetrics,
     options: {
       responsive: true,
       plugins: {
@@ -363,7 +459,7 @@ function initializeCharts() {
         y: {
           title: {
             display: true,
-            text: "No. of backlinks",
+            text: "No. of referring domains",
           },
         },
       },
@@ -616,6 +712,48 @@ function initializeCharts() {
           title: {
             display: true,
             text: "Average engagement time in minutes",
+          },
+        },
+      },
+    },
+  });
+
+  // Backlinks chart
+  const ctxBacklinks = document
+    .getElementById("backlinksChart")
+    .getContext("2d");
+  new Chart(ctxBacklinks, {
+    type: "line",
+    data: backlinksMetrics,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top",
+        },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              let label = context.dataset.label || "";
+              if (context.parsed.y !== null) {
+                label += ": " + context.parsed.y + " min";
+              }
+              return label;
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: "Months",
+          },
+        },
+        y: {
+          title: {
+            display: true,
+            text: "No. of Backlinks",
           },
         },
       },
