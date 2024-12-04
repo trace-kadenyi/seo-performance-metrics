@@ -183,7 +183,7 @@ function displayMatrixData(data) {
       .toString()
       .padEnd(columnWidths.october2024)} | ${item.november2024
       .toString()
-      .padEnd(columnWidths.november2024)}\n`;
+      .padEnd(columnWidths.november2024)} | \n`;
     outputText += `|${"-".repeat(columnWidths.metric + 2)}|${"-".repeat(
       columnWidths.source + 2
     )}|${"-".repeat(columnWidths.may2024 + 2)}|${"-".repeat(
