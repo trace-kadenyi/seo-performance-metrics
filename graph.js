@@ -23,7 +23,7 @@ let seoMetricsTable = [
     september2024: "16,837",
     october2024: "15,654",
     november2024: "21,790",
-    december2024: "13,389",
+    december2024: "13,386",
   },
   {
     metric: "Organic Traffic",
@@ -245,7 +245,7 @@ const seoMetrics = {
     },
     {
       label: "Users",
-      data: [15377, 13547, 17278, 22190, 16837, 15654, 21790, 13389],
+      data: [15377, 13547, 17278, 22190, 16837, 15654, 21790, 13386],
       borderColor: "rgba(153, 102, 255, 1)",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       fill: true,
