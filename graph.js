@@ -23,7 +23,7 @@ let seoMetricsTable = [
     september2024: "16,837",
     october2024: "15,654",
     november2024: "21,790",
-    december2024: "17,167",
+    december2024: "13,389",
   },
   {
     metric: "Organic Traffic",
