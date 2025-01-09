@@ -245,7 +245,7 @@ const seoMetrics = {
     },
     {
       label: "Users",
-      data: [15377, 13547, 17278, 22190, 16837, 15654, 21790, 17167],
+      data: [15377, 13547, 17278, 22190, 16837, 15654, 21790, 13389],
       borderColor: "rgba(153, 102, 255, 1)",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       fill: true,
