@@ -11,6 +11,7 @@ let seoMetricsTable = [
     september2024: "16,918",
     october2024: "13,741",
     november2024: "26,665",
+    december2024: "20,931",
   },
   {
     metric: "Users",
@@ -22,6 +23,7 @@ let seoMetricsTable = [
     september2024: "16,837",
     october2024: "15,654",
     november2024: "21,790",
+    december2024: "17,167",
   },
   {
     metric: "Organic Traffic",
@@ -33,6 +35,7 @@ let seoMetricsTable = [
     september2024: "8,600",
     october2024: "3,888",
     november2024: "8,700",
+    december2024: "10,400",
   },
   {
     metric: "Average Position",
@@ -44,6 +47,7 @@ let seoMetricsTable = [
     september2024: 22.1,
     october2024: 27.2,
     november2024: 21.2,
+    december2024: 21.9,
   },
   {
     metric: "Click-Through Rate",
@@ -55,6 +59,7 @@ let seoMetricsTable = [
     september2024: "2.60%",
     october2024: "2.3%",
     november2024: "2.9%",
+    december2024: "2.5%",
   },
   {
     metric: "Referring Domains",
@@ -66,6 +71,7 @@ let seoMetricsTable = [
     september2024: 135,
     october2024: 208,
     november2024: 213,
+    december2024: 219,
   },
   {
     metric: "Domain Rating (DR)",
@@ -77,6 +83,7 @@ let seoMetricsTable = [
     september2024: 24,
     october2024: 27,
     november2024: 28,
+    december2024: 30,
   },
   {
     metric: "Bounce Rate",
@@ -88,6 +95,7 @@ let seoMetricsTable = [
     september2024: "41.5",
     october2024: "48.3%",
     november2024: "44.18%",
+    december2024: "40.45%",
   },
   {
     metric: "Time on Page",
@@ -95,10 +103,11 @@ let seoMetricsTable = [
     may2024: "1.7 min",
     june2024: "1.7 min",
     july2024: "1.8 min",
-    august2024: "1.7min",
-    september2024: "1.8min",
-    october2024: "1.7min",
+    august2024: "1.7 min",
+    september2024: "1.8 min",
+    october2024: "1.7 min",
     november2024: "1.6 min",
+    december2024: "1.4 min",
   },
   {
     metric: "Average Engagement Time",
@@ -110,6 +119,7 @@ let seoMetricsTable = [
     september2024: "1.25 min",
     october2024: "1.05 min",
     november2024: "1.25 min",
+    december2024: "1.2 min",
   },
   {
     metric: "Backlinks",
@@ -121,6 +131,7 @@ let seoMetricsTable = [
     september2024: "431",
     october2024: "834",
     november2024: "991",
+    december2024: "1000",
   },
 ];
 
@@ -140,6 +151,7 @@ function displayMatrixData(data) {
     september2024: 25,
     october2024: 25,
     november2024: 25,
+    december2024: 25,
   };
 
   // Create header row
@@ -153,7 +165,9 @@ function displayMatrixData(data) {
     columnWidths.september2024
   )} | ${"October 2024".padEnd(
     columnWidths.october2024
-  )} | ${"November 2024".padEnd(columnWidths.november2024)} |\n`;
+  )} | ${"November 2024".padEnd(
+    columnWidths.november2024
+  )} | ${"December 2024".padEnd(columnWidths.december2024)} |\n`;
 
   outputText += `|${"-".repeat(columnWidths.metric + 2)}|${"-".repeat(
     columnWidths.source + 2
@@ -163,7 +177,9 @@ function displayMatrixData(data) {
     columnWidths.august2024 + 2
   )}|${"-".repeat(columnWidths.october2024 + 2)}|${"-".repeat(
     columnWidths.november2024 + 2
-  )}|${"-".repeat(columnWidths.november2024 + 2)}|\n`;
+  )}|${"-".repeat(columnWidths.november2024 + 2)}|${"-".repeat(
+    columnWidths.december2024 + 2
+  )}|\n`;
 
   // Create data rows
   data.forEach((item) => {
@@ -183,7 +199,9 @@ function displayMatrixData(data) {
       .toString()
       .padEnd(columnWidths.october2024)} | ${item.november2024
       .toString()
-      .padEnd(columnWidths.november2024)} | \n`;
+      .padEnd(columnWidths.november2024)} | ${item.december2024
+      .toString()
+      .padEnd(columnWidths.december2024)} | \n`;
     outputText += `|${"-".repeat(columnWidths.metric + 2)}|${"-".repeat(
       columnWidths.source + 2
     )}|${"-".repeat(columnWidths.may2024 + 2)}|${"-".repeat(
@@ -192,7 +210,9 @@ function displayMatrixData(data) {
       columnWidths.august2024 + 2
     )}|${"-".repeat(columnWidths.september2024 + 2)}|${"-".repeat(
       columnWidths.november2024 + 2
-    )}|${"-".repeat(columnWidths.november2024 + 2)}|\n`;
+    )}|${"-".repeat(columnWidths.november2024 + 2)}|${"-".repeat(
+      columnWidths.december2024 + 2
+    )}|\n`;
   });
 
   outputElement.innerHTML = outputText;
@@ -213,25 +233,26 @@ const seoMetrics = {
     "September 2024",
     "October 2024",
     "November 2024",
+    "December 2024",
   ],
   datasets: [
     {
       label: "Sessions",
-      data: [16414, 14482, 19192, 20972, 16918, 13741, 26665],
+      data: [16414, 14482, 19192, 20972, 16918, 13741, 26665, 20931],
       borderColor: "rgba(75, 192, 192, 1)",
       backgroundColor: "rgba(75, 192, 192, 0.2)",
       fill: true,
     },
     {
       label: "Users",
-      data: [15377, 13547, 17278, 22190, 16837, 15654, 21790],
+      data: [15377, 13547, 17278, 22190, 16837, 15654, 21790, 17167],
       borderColor: "rgba(153, 102, 255, 1)",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       fill: true,
     },
     {
       label: "Organic Traffic",
-      data: [8356, 9021, 8824, 10876, 8600, 3888, 8700],
+      data: [8356, 9021, 8824, 10876, 8600, 3888, 8700, 10400],
       borderColor: "rgba(255, 159, 64, 1)",
       backgroundColor: "rgba(255, 159, 64, 0.2)",
       fill: true,
@@ -250,11 +271,12 @@ const refDomsMetrics = {
     "September 2024",
     "October 2024",
     "November 2024",
+    "December 2024",
   ],
   datasets: [
     {
       label: "Referring Domains",
-      data: [99, 122, 132, 137, 135, 208, 213],
+      data: [99, 122, 132, 137, 135, 208, 213, 219],
       borderColor: "rgba(255, 99, 132, 1)",
       backgroundColor: "rgba(255, 99, 132, 0.2)",
       fill: true,
@@ -272,11 +294,12 @@ const domainRatingMetrics = {
     "September 2024",
     "October 2024",
     "November 2024",
+    "December 2024",
   ],
   datasets: [
     {
       label: "Domain Rating (DR)",
-      data: [24, 24, 24, 25, 24, 27, 28],
+      data: [24, 24, 24, 25, 24, 27, 28, 30],
       borderColor: "rgba(54, 162, 235, 1)",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       fill: true,
@@ -294,11 +317,12 @@ const bounceRateMetrics = {
     "September 2024",
     "October 2024",
     "November 2024",
+    "December 2024",
   ],
   datasets: [
     {
       label: "Bounce Rate",
-      data: [37.6, 39.8, 39.8, 38.4, 41.5, 48.3, 44.18],
+      data: [37.6, 39.8, 39.8, 38.4, 41.5, 48.3, 44.18, 40.45],
       borderColor: "rgba(255, 206, 86, 1)",
       backgroundColor: "rgba(255, 206, 86, 0.2)",
       fill: true,
@@ -316,11 +340,12 @@ const clickThroughRateMetrics = {
     "September 2024",
     "October 2024",
     "November 2024",
+    "December 2024",
   ],
   datasets: [
     {
       label: "Click-Through Rate",
-      data: [3, 2.6, 3, 3.2, 2.6, 2.3, 2.9],
+      data: [3, 2.6, 3, 3.2, 2.6, 2.3, 2.9, 2.5],
       borderColor: "rgba(75, 192, 192, 1)",
       backgroundColor: "rgba(75, 192, 192, 0.2)",
       fill: true,
@@ -338,11 +363,12 @@ const averagePositionMetrics = {
     "September 2024",
     "October 2024",
     "November 2024",
+    "December 2024",
   ],
   datasets: [
     {
       label: "Average Position",
-      data: [19.6, 19.5, 18.2, 18.9, 22.1, 27.2, 21.2],
+      data: [19.6, 19.5, 18.2, 18.9, 22.1, 27.2, 21.2, 21.9],
       borderColor: "rgba(153, 102, 255, 1)",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       fill: true,
@@ -360,11 +386,12 @@ const timeOnPageMetrics = {
     "September 2024",
     "October 2024",
     "November 2024",
+    "December 2024",
   ],
   datasets: [
     {
       label: "Time on Page",
-      data: [1.7, 1.7, 1.8, 1.7, 1.8, 1.7, 1.6],
+      data: [1.7, 1.7, 1.8, 1.7, 1.8, 1.7, 1.6, 1.4],
       borderColor: "rgba(255, 159, 64, 1)",
       backgroundColor: "rgba(255, 159, 64, 0.2)",
       fill: true,
@@ -381,11 +408,12 @@ const averageEngagementTimeMetrics = {
     "September 2024",
     "October 2024",
     "November 2024",
+    "December 2024",
   ],
   datasets: [
     {
       label: "Average Engagement Time",
-      data: [1.23, 1.33, 1.35, 1.32, 1.25, 1.05, 1.25], // Decimal minutes data
+      data: [1.23, 1.33, 1.35, 1.32, 1.25, 1.05, 1.25, 1.2], // Decimal minutes data
       borderColor: "rgba(54, 162, 235, 1)",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       fill: true,
@@ -394,11 +422,17 @@ const averageEngagementTimeMetrics = {
 };
 // Average time metrics
 const backlinksMetrics = {
-  labels: ["August 2024", "September 2024", "October 2024", "November 2024"],
+  labels: [
+    "August 2024",
+    "September 2024",
+    "October 2024",
+    "November 2024",
+    "December 2024",
+  ],
   datasets: [
     {
       label: "Backlinks",
-      data: [418, 431, 834, 991],
+      data: [418, 431, 834, 991, 1000],
       borderColor: "rgba(54, 162, 235, 1)",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       fill: true,
