@@ -3,6 +3,7 @@ body {
   padding: 0;
   overflow-x: hidden;
   font-family: Helvetica;
+  background-color: #fdf5f5;
 }
 
 #output-container {
