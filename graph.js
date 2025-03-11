@@ -13,6 +13,7 @@ let seoMetricsTable = [
     november2024: "26,665",
     december2024: "20,931",
     january2025: "21,503",
+    february2025: "11,768",
   },
   {
     metric: "Users",
@@ -26,6 +27,7 @@ let seoMetricsTable = [
     november2024: "21,790",
     december2024: "13,476",
     january2025: "13,438",
+    february2025: "7,298",
   },
   {
     metric: "Organic Traffic",
@@ -39,6 +41,7 @@ let seoMetricsTable = [
     november2024: "8,700",
     december2024: "10,400",
     january2025: "8,800",
+    february2025: "10,900",
   },
   {
     metric: "Average Position",
@@ -52,6 +55,7 @@ let seoMetricsTable = [
     november2024: 21.2,
     december2024: 21.9,
     january2025: 17.8,
+    february2025: 20.6,
   },
   {
     metric: "Click-Through Rate",
@@ -65,6 +69,7 @@ let seoMetricsTable = [
     november2024: "2.9%",
     december2024: "2.5%",
     january2025: "2.30%",
+    february2025: "1.8%",
   },
   {
     metric: "Referring Domains",
@@ -78,6 +83,7 @@ let seoMetricsTable = [
     november2024: 213,
     december2024: 219,
     january2025: 237,
+    february2025: 232,
   },
   {
     metric: "Domain Rating (DR)",
@@ -91,6 +97,7 @@ let seoMetricsTable = [
     november2024: 28,
     december2024: 30,
     january2025: 29,
+    february2025: 29,
   },
   {
     metric: "Bounce Rate",
@@ -104,6 +111,7 @@ let seoMetricsTable = [
     november2024: "44.18%",
     december2024: "40.45%",
     january2025: "39.36%",
+    february2025: "41.79%",
   },
   {
     metric: "Time on Page",
@@ -117,6 +125,7 @@ let seoMetricsTable = [
     november2024: "1.6 min",
     december2024: "1.4 min",
     january2025: "1.5 min",
+    february2025: "1.6 min",
   },
   {
     metric: "Average Engagement Time",
@@ -130,6 +139,7 @@ let seoMetricsTable = [
     november2024: "1.25 min",
     december2024: "1.2 min",
     january2025: "1.28 min",
+    february2025: "1.36 min",
   },
   {
     metric: "Backlinks",
@@ -143,6 +153,7 @@ let seoMetricsTable = [
     november2024: "991",
     december2024: "1000",
     january2025: "1100",
+    february2025: "1200",
   },
 ];
 
@@ -164,6 +175,7 @@ function displayMatrixData(data) {
     november2024: 25,
     december2024: 25,
     january2025: 25,
+    february2025: 25,
   };
 
   // Create header row
@@ -181,7 +193,9 @@ function displayMatrixData(data) {
     columnWidths.november2024
   )} | ${"December 2024".padEnd(
     columnWidths.december2024
-  )} | ${"January 2025".padEnd(columnWidths.january2025)} |\n`;
+  )} | ${"January 2025".padEnd(
+    columnWidths.january2025
+  )} | ${"February 2025".padEnd(columnWidths.february2025)} |\n`;
 
   outputText += `|${"-".repeat(columnWidths.metric + 2)}|${"-".repeat(
     columnWidths.source + 2
@@ -193,7 +207,9 @@ function displayMatrixData(data) {
     columnWidths.november2024 + 2
   )}|${"-".repeat(columnWidths.december2024 + 2)}|${"-".repeat(
     columnWidths.january2025 + 2
-  )}|${"-".repeat(columnWidths.january2025 + 2)}|\n`;
+  )}|${"-".repeat(columnWidths.january2025 + 2)}|${"-".repeat(
+    columnWidths.february2025 + 2
+  )}|\n`;
 
   // Create data rows
   data.forEach((item) => {
@@ -217,7 +233,9 @@ function displayMatrixData(data) {
       .toString()
       .padEnd(columnWidths.december2024)} | ${item.january2025
       .toString()
-      .padEnd(columnWidths.january2025)} | \n`;
+      .padEnd(columnWidths.january2025)} | ${item.february2025
+      .toString()
+      .padEnd(columnWidths.february2025)} | \n`;
     outputText += `|${"-".repeat(columnWidths.metric + 2)}|${"-".repeat(
       columnWidths.source + 2
     )}|${"-".repeat(columnWidths.may2024 + 2)}|${"-".repeat(
@@ -228,7 +246,9 @@ function displayMatrixData(data) {
       columnWidths.november2024 + 2
     )}|${"-".repeat(columnWidths.november2024 + 2)}|${"-".repeat(
       columnWidths.december2024 + 2
-    )}|${"-".repeat(columnWidths.january2025 + 2)}|\n`;
+    )}|${"-".repeat(columnWidths.january2025 + 2)}|${"-".repeat(
+      columnWidths.february2025 + 2
+    )}|\n`;
   });
 
   outputElement.innerHTML = outputText;
@@ -251,25 +271,30 @@ const seoMetrics = {
     "November 2024",
     "December 2024",
     "January 2025",
+    "February 2025",
   ],
   datasets: [
     {
       label: "Sessions",
-      data: [16414, 14482, 19192, 20972, 16918, 13741, 26665, 20931, 21503],
+      data: [
+        16414, 14482, 19192, 20972, 16918, 13741, 26665, 20931, 21503, 11768,
+      ],
       borderColor: "rgba(75, 192, 192, 1)",
       backgroundColor: "rgba(75, 192, 192, 0.2)",
       fill: true,
     },
     {
       label: "Users",
-      data: [15377, 13547, 17278, 22190, 16837, 15654, 21790, 13386, 13438],
+      data: [
+        15377, 13547, 17278, 22190, 16837, 15654, 21790, 13386, 13438, 7298,
+      ],
       borderColor: "rgba(153, 102, 255, 1)",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       fill: true,
     },
     {
       label: "Organic Traffic",
-      data: [8356, 9021, 8824, 10876, 8600, 3888, 8700, 10400, 8800],
+      data: [8356, 9021, 8824, 10876, 8600, 3888, 8700, 10400, 8800, 10900],
       borderColor: "rgba(255, 159, 64, 1)",
       backgroundColor: "rgba(255, 159, 64, 0.2)",
       fill: true,
@@ -290,11 +315,12 @@ const refDomsMetrics = {
     "November 2024",
     "December 2024",
     "January 2025",
+    "February 2025",
   ],
   datasets: [
     {
       label: "Referring Domains",
-      data: [99, 122, 132, 137, 135, 208, 213, 219, 237],
+      data: [99, 122, 132, 137, 135, 208, 213, 219, 237, 232],
       borderColor: "rgba(255, 99, 132, 1)",
       backgroundColor: "rgba(255, 99, 132, 0.2)",
       fill: true,
@@ -314,11 +340,12 @@ const domainRatingMetrics = {
     "November 2024",
     "December 2024",
     "January 2025",
+    "February 2025",
   ],
   datasets: [
     {
       label: "Domain Rating (DR)",
-      data: [24, 24, 24, 25, 24, 27, 28, 30, 29],
+      data: [24, 24, 24, 25, 24, 27, 28, 30, 29, 29],
       borderColor: "rgba(54, 162, 235, 1)",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       fill: true,
@@ -338,11 +365,12 @@ const bounceRateMetrics = {
     "November 2024",
     "December 2024",
     "January 2025",
+    "February 2025",
   ],
   datasets: [
     {
       label: "Bounce Rate",
-      data: [37.6, 39.8, 39.8, 38.4, 41.5, 48.3, 44.18, 40.45, 39.36],
+      data: [37.6, 39.8, 39.8, 38.4, 41.5, 48.3, 44.18, 40.45, 39.36, 41.79],
       borderColor: "rgba(255, 206, 86, 1)",
       backgroundColor: "rgba(255, 206, 86, 0.2)",
       fill: true,
@@ -362,11 +390,12 @@ const clickThroughRateMetrics = {
     "November 2024",
     "December 2024",
     "January 2025",
+    "February 2025",
   ],
   datasets: [
     {
       label: "Click-Through Rate",
-      data: [3, 2.6, 3, 3.2, 2.6, 2.3, 2.9, 2.5, 2.3],
+      data: [3, 2.6, 3, 3.2, 2.6, 2.3, 2.9, 2.5, 2.3, 1.8],
       borderColor: "rgba(75, 192, 192, 1)",
       backgroundColor: "rgba(75, 192, 192, 0.2)",
       fill: true,
@@ -386,11 +415,12 @@ const averagePositionMetrics = {
     "November 2024",
     "December 2024",
     "January 2025",
+    "February 2025",
   ],
   datasets: [
     {
       label: "Average Position",
-      data: [19.6, 19.5, 18.2, 18.9, 22.1, 27.2, 21.2, 21.9, 17.8],
+      data: [19.6, 19.5, 18.2, 18.9, 22.1, 27.2, 21.2, 21.9, 17.8, 20.6],
       borderColor: "rgba(153, 102, 255, 1)",
       backgroundColor: "rgba(153, 102, 255, 0.2)",
       fill: true,
@@ -410,11 +440,12 @@ const timeOnPageMetrics = {
     "November 2024",
     "December 2024",
     "January 2025",
+    "February 2025",
   ],
   datasets: [
     {
       label: "Time on Page",
-      data: [1.7, 1.7, 1.8, 1.7, 1.8, 1.7, 1.6, 1.4, 1.5],
+      data: [1.7, 1.7, 1.8, 1.7, 1.8, 1.7, 1.6, 1.4, 1.5, 1.6],
       borderColor: "rgba(255, 159, 64, 1)",
       backgroundColor: "rgba(255, 159, 64, 0.2)",
       fill: true,
@@ -433,11 +464,12 @@ const averageEngagementTimeMetrics = {
     "November 2024",
     "December 2024",
     "January 2025",
+    "February 2025",
   ],
   datasets: [
     {
       label: "Average Engagement Time",
-      data: [1.23, 1.33, 1.35, 1.32, 1.25, 1.05, 1.25, 1.2, 1.28], // Decimal minutes data
+      data: [1.23, 1.33, 1.35, 1.32, 1.25, 1.05, 1.25, 1.2, 1.28, 1.36], // Decimal minutes data
       borderColor: "rgba(54, 162, 235, 1)",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       fill: true,
@@ -453,11 +485,12 @@ const backlinksMetrics = {
     "November 2024",
     "December 2024",
     "January 2025",
+    "February 2025",
   ],
   datasets: [
     {
       label: "Backlinks",
-      data: [418, 431, 834, 991, 1000, 1100],
+      data: [418, 431, 834, 991, 1000, 1100, 1200],
       borderColor: "rgba(54, 162, 235, 1)",
       backgroundColor: "rgba(54, 162, 235, 0.2)",
       fill: true,
